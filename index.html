@@ -5,35 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shopminique | Handmade with Love</title>
+<title>Shopminique | Handmade Clay Creations</title>
+
+<meta name="description" content="Shopminique creates handmade clay keychains and cute little creations. Contact us on Instagram or email.">
 
 <style>
 :root {
   --cream: #F8F3EA;
   --pink: #E8B9C5;
-  --yellow: #F5E5B8;
-  --sage: #A9BDA7;
   --brown: #59464B;
   --soft-white: #FFFCF8;
-}
-
-.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  padding: 16px 10px;
-  background: var(--soft-white);
-}
-
-.main-nav a {
-  color: var(--brown);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.main-nav a:hover {
-  text-decoration: underline;
+  --sage: #A9BDA7;
 }
 
 * {
@@ -52,31 +34,54 @@ body {
   text-align: center;
 }
 
+/* HEADER */
+
 header {
   background: var(--pink);
-  padding: 34px 15px;
+  padding: 35px 15px;
 }
 
 h1 {
   font-family: Georgia, serif;
   font-size: 38px;
   margin: 8px;
-  letter-spacing: 1px;
 }
 
 .tagline {
   font-size: 15px;
-  margin: 8px 0 0;
 }
 
 .header-note {
   display: inline-block;
   background: var(--cream);
-  padding: 7px 16px;
+  padding: 8px 17px;
   border-radius: 30px;
-  margin-top: 15px;
   font-size: 12px;
+  margin-top: 10px;
 }
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 17px 10px;
+  background: var(--soft-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(89,70,75,0.06);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* COLLECTION */
 
 .container {
   padding: 30px 15px;
@@ -85,7 +90,7 @@ h1 {
 .section-heading {
   font-family: Georgia, serif;
   font-size: 27px;
-  margin: 5px 0 22px;
+  margin-bottom: 22px;
 }
 
 .product {
@@ -98,20 +103,18 @@ h1 {
 }
 
 .product h2 {
-  color: var(--brown);
   font-family: Georgia, serif;
   font-size: 24px;
   line-height: 1.4;
 }
 
-/* Swipeable product gallery */
+/* GALLERY */
 
 .gallery {
   display: flex;
   gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   margin: 20px 0 12px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -132,8 +135,6 @@ h1 {
   cursor: zoom-in;
 }
 
-/* Gallery indicators */
-
 .dots {
   display: flex;
   justify-content: center;
@@ -147,6 +148,7 @@ h1 {
   border-radius: 50%;
   background: var(--pink);
   opacity: 0.45;
+  cursor: pointer;
 }
 
 .dot.active {
@@ -157,18 +159,15 @@ h1 {
 .gallery-hint {
   font-size: 12px;
   color: #927B7F;
-  margin: 10px 0 20px;
 }
 
 .description {
   font-size: 15px;
   line-height: 1.7;
-  padding: 0 5px;
 }
 
 .price {
   font-size: 27px;
-  color: var(--brown);
   font-weight: bold;
   margin: 18px 0 10px;
 }
@@ -190,14 +189,83 @@ h1 {
   margin-top: 18px;
 }
 
-/* Full-screen photo viewer */
+/* CONTACT US */
+
+#contact {
+  display: block;
+  width: 100%;
+  padding: 45px 18px;
+  margin-top: 25px;
+  background: var(--soft-white);
+  scroll-margin-top: 65px;
+}
+
+.contact-heading {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.contact-description {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 400px;
+  margin: 0 auto 25px;
+}
+
+.contact-box {
+  max-width: 390px;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--cream);
+  border: 1px solid #EAD6DA;
+}
+
+.contact-icon {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.contact-title {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  margin: 5px 0 12px;
+}
+
+.contact-detail {
+  color: var(--brown);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-button {
+  display: block;
+  max-width: 280px;
+  margin: 15px auto 0;
+  padding: 14px 18px;
+  border-radius: 30px;
+  background: var(--pink);
+  color: var(--brown);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.email-button {
+  background: #E5EDE2;
+}
+
+/* VIEWER */
 
 .viewer {
   display: none;
   position: fixed;
   z-index: 1000;
   inset: 0;
-  background: rgba(35, 27, 30, 0.97);
+  background: rgba(35,27,30,0.97);
   align-items: center;
   justify-content: center;
   padding: 55px 15px;
@@ -251,28 +319,42 @@ h1 {
   font-size: 14px;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer {
   background: var(--pink);
-  padding: 25px 15px;
-  margin-top: 30px;
+  padding: 28px 15px;
 }
 
 .footer-message {
   font-family: Georgia, serif;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .footer-small {
   font-size: 12px;
+  line-height: 1.8;
 }
 
-/* Mobile layout */
+.footer-small a {
+  color: var(--brown);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* MOBILE */
 
 @media(max-width: 380px) {
   h1 {
     font-size: 31px;
+  }
+
+  nav {
+    gap: 17px;
+  }
+
+  nav a {
+    font-size: 12px;
   }
 
   .gallery img {
@@ -288,7 +370,9 @@ footer {
 
 <body>
 
-<header>
+<!-- HEADER -->
+
+<header id="home">
   <h1>🌸 Shopminique 🌸</h1>
 
   <p class="tagline">
@@ -300,7 +384,17 @@ footer {
   </div>
 </header>
 
-<main class="container">
+<!-- NAVIGATION -->
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#collection">COLLECTION</a>
+  <a href="#contact">CONTACT US</a>
+</nav>
+
+<!-- COLLECTION -->
+
+<main class="container" id="collection">
 
   <h2 class="section-heading">Our Little Collection</h2>
 
@@ -324,7 +418,7 @@ footer {
 
     </div>
 
-    <div class="dots" id="dots" aria-label="Gallery image indicators">
+    <div class="dots" id="dots">
       <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
@@ -342,7 +436,9 @@ footer {
 
     <p class="price">₹349</p>
 
-    <p class="stock">✨ Only 5 pieces available!</p>
+    <p class="stock">
+      ✨ Only 5 pieces available!
+    </p>
 
     <p class="product-note">
       Made with care, especially for you 💗
@@ -352,7 +448,71 @@ footer {
 
 </main>
 
-<!-- Full-screen image viewer -->
+<!-- CONTACT US SECTION -->
+
+<section id="contact">
+
+  <h2 class="contact-heading">
+    Let's Stay Connected ♡
+  </h2>
+
+  <p class="contact-description">
+    Have a question, want to place an order,
+    or simply want to say hello?
+    We'd love to hear from you!
+  </p>
+
+  <!-- INSTAGRAM -->
+
+  <div class="contact-box">
+
+    <div class="contact-icon">📸</div>
+
+    <h3 class="contact-title">Find us on Instagram</h3>
+
+    <a class="contact-detail"
+       href="https://www.instagram.com/shopminique.co/"
+       target="_blank"
+       rel="noopener noreferrer">
+       @shopminique.co
+    </a>
+
+    <a class="contact-button"
+       href="https://www.instagram.com/shopminique.co/"
+       target="_blank"
+       rel="noopener noreferrer">
+       VISIT OUR INSTAGRAM ♡
+    </a>
+
+  </div>
+
+  <!-- EMAIL -->
+
+  <div class="contact-box">
+
+    <div class="contact-icon">💌</div>
+
+    <h3 class="contact-title">Write us an Email</h3>
+
+    <a class="contact-detail"
+       href="mailto:Shopminique.co@gmail.com">
+       Shopminique.co@gmail.com
+    </a>
+
+    <a class="contact-button email-button"
+       href="mailto:Shopminique.co@gmail.com">
+       SEND US AN EMAIL ♡
+    </a>
+
+  </div>
+
+  <p class="contact-description" style="margin-top:25px;">
+    Thank you for supporting our little handmade business! 🌷
+  </p>
+
+</section>
+
+<!-- IMAGE VIEWER -->
 
 <div class="viewer" id="viewer">
 
@@ -363,7 +523,7 @@ footer {
   aria-label="Previous image">‹</button>
 
   <img id="largeImage" src=""
-  alt="Enlarged Blueberry Pancake Keychain photo">
+  alt="Enlarged product photograph">
 
   <button class="viewer-arrow viewer-next" id="nextImage"
   aria-label="Next image">›</button>
@@ -372,7 +532,10 @@ footer {
 
 </div>
 
+<!-- FOOTER -->
+
 <footer>
+
   <p class="footer-message">
     Made with love by Shopminique ♡
   </p>
@@ -380,9 +543,27 @@ footer {
   <p class="footer-small">
     Thank you for supporting handmade creations!
   </p>
+
+  <p class="footer-small">
+    Instagram:
+    <a href="https://www.instagram.com/shopminique.co/"
+       target="_blank"
+       rel="noopener noreferrer">
+       @shopminique.co
+    </a>
+  </p>
+
+  <p class="footer-small">
+    Email:
+    <a href="mailto:Shopminique.co@gmail.com">
+       Shopminique.co@gmail.com
+    </a>
+  </p>
+
 </footer>
 
 <script>
+
 const gallery = document.getElementById("gallery");
 const photos = Array.from(gallery.querySelectorAll("img"));
 const dots = Array.from(document.querySelectorAll(".dot"));
@@ -428,7 +609,6 @@ function nextImage() {
 function prevImage() {
   currentIndex =
     (currentIndex - 1 + photos.length) % photos.length;
-
   showImage();
 }
 
@@ -451,22 +631,43 @@ dots.forEach((dot, index) => {
 });
 
 document.getElementById("nextImage")
-  .addEventListener("click", nextImage);
+.addEventListener("click", nextImage);
 
 document.getElementById("prevImage")
-  .addEventListener("click", prevImage);
+.addEventListener("click", prevImage);
 
 document.getElementById("closeViewer")
-  .addEventListener("click", closeViewer);
+.addEventListener("click", closeViewer);
 
 viewer.addEventListener("click", (event) => {
-  if (event.target === viewer) {
-    closeViewer();
-  }
+  if (event.target === viewer) closeViewer();
 });
 
 document.addEventListener("keydown", (event) => {
   if (!viewer.classList.contains("active")) return;
 
   if (event.key === "Escape") closeViewer();
-  
+  if (event.key === "ArrowRight") nextImage();
+  if (event.key === "ArrowLeft") prevImage();
+});
+
+let touchStartX = 0;
+
+viewer.addEventListener("touchstart", (event) => {
+  touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+viewer.addEventListener("touchend", (event) => {
+  const touchEndX = event.changedTouches[0].screenX;
+  const difference = touchEndX - touchStartX;
+
+  if (Math.abs(difference) > 50) {
+    if (difference < 0) nextImage();
+    else prevImage();
+  }
+}, { passive: true });
+
+</script>
+
+</body>
+</html>
