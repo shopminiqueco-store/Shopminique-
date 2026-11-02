@@ -1,100 +1,267 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shopminique 🌸</title>
+<title>Shopminique | Handmade with Love</title>
 
 <style>
+:root {
+  --cream: #F8F3EA;
+  --pink: #E8B9C5;
+  --yellow: #F5E5B8;
+  --sage: #A9BDA7;
+  --brown: #59464B;
+  --soft-white: #FFFCF8;
+}
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff5f8;
-  color: #5a4050;
+  background: var(--cream);
+  color: var(--brown);
   text-align: center;
 }
 
 header {
-  background: #ffdce8;
-  padding: 30px 15px;
+  background: var(--pink);
+  padding: 34px 15px;
 }
 
 h1 {
-  font-size: 36px;
-  margin: 10px;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin: 8px;
+  letter-spacing: 1px;
 }
 
 .tagline {
-  font-size: 16px;
+  font-size: 15px;
+  margin: 8px 0 0;
+}
+
+.header-note {
+  display: inline-block;
+  background: var(--cream);
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-top: 15px;
+  font-size: 12px;
 }
 
 .container {
-  padding: 25px 15px;
+  padding: 30px 15px;
+}
+
+.section-heading {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  margin: 5px 0 22px;
 }
 
 .product {
-  background: white;
+  background: var(--soft-white);
   border-radius: 22px;
   padding: 22px;
   margin: 15px auto;
-  max-width: 430px;
-  box-shadow: 0 5px 15px #ead9df;
+  max-width: 450px;
+  box-shadow: 0 5px 18px rgba(89,70,75,0.09);
 }
 
 .product h2 {
-  color: #d36b8c;
+  color: var(--brown);
+  font-family: Georgia, serif;
+  font-size: 24px;
+  line-height: 1.4;
 }
 
+/* Swipeable product gallery */
+
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 20px 0;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  margin: 20px 0 12px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery img {
+  flex: 0 0 100%;
   width: 100%;
-  height: 190px;
+  height: 300px;
   object-fit: contain;
-  background: #fff8fa;
-  border-radius: 13px;
+  background: var(--cream);
+  border-radius: 15px;
+  scroll-snap-align: center;
+  cursor: zoom-in;
+}
+
+/* Gallery indicators */
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin: 14px 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pink);
+  opacity: 0.45;
+}
+
+.dot.active {
+  background: var(--brown);
+  opacity: 1;
+}
+
+.gallery-hint {
+  font-size: 12px;
+  color: #927B7F;
+  margin: 10px 0 20px;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 0 5px;
 }
 
 .price {
-  font-size: 25px;
-  color: #d36b8c;
+  font-size: 27px;
+  color: var(--brown);
   font-weight: bold;
+  margin: 18px 0 10px;
 }
 
 .stock {
-  color: #648b70;
+  display: inline-block;
+  background: #E5EDE2;
+  color: #526B50;
+  padding: 9px 16px;
+  border-radius: 25px;
+  font-size: 13px;
   font-weight: bold;
 }
 
-.order {
-  display: inline-block;
-  background: #e99ab7;
-  color: white;
-  text-decoration: none;
-  padding: 13px 28px;
-  border-radius: 30px;
-  margin-top: 10px;
+.product-note {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 18px;
 }
 
+/* Full-screen photo viewer */
+
+.viewer {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(35, 27, 30, 0.97);
+  align-items: center;
+  justify-content: center;
+  padding: 55px 15px;
+}
+
+.viewer.active {
+  display: flex;
+}
+
+.viewer img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.close-viewer,
+.viewer-arrow {
+  position: absolute;
+  border: none;
+  background: rgba(255,255,255,0.18);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 27px;
+}
+
+.close-viewer {
+  top: 15px;
+  right: 15px;
+}
+
+.viewer-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.viewer-prev {
+  left: 10px;
+}
+
+.viewer-next {
+  right: 10px;
+}
+
+.viewer-count {
+  position: absolute;
+  bottom: 18px;
+  color: white;
+  font-size: 14px;
+}
+
+/* Footer */
+
 footer {
-  background: #ffdce8;
-  padding: 20px;
+  background: var(--pink);
+  padding: 25px 15px;
   margin-top: 30px;
 }
 
-@media(max-width: 350px) {
+.footer-message {
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.footer-small {
+  font-size: 12px;
+}
+
+/* Mobile layout */
+
+@media(max-width: 380px) {
+  h1 {
+    font-size: 31px;
+  }
+
   .gallery img {
-    height: 140px;
+    height: 240px;
+  }
+
+  .product {
+    padding: 17px;
   }
 }
 </style>
@@ -103,52 +270,211 @@ footer {
 <body>
 
 <header>
-<h1>🌸 Shopminique 🌸</h1>
-<p class="tagline">
-Handmade clay creations made with love ✨
-</p>
+  <h1>🌸 Shopminique 🌸</h1>
+
+  <p class="tagline">
+    Handmade clay creations made with love ✨
+  </p>
+
+  <div class="header-note">
+    Little creations, made to make you happy ♡
+  </div>
 </header>
 
-<div class="container">
+<main class="container">
 
-<div class="product">
+  <h2 class="section-heading">Our Little Collection</h2>
 
-<h2>🫐 Blueberry Pancake Keychain</h2>
+  <div class="product">
 
-<div class="gallery">
+    <h2>🫐 Blueberry Pancake Keychain</h2>
 
-<img src="1793445666267.png"
-alt="Blueberry Pancake Keychain 1">
+    <div class="gallery" id="gallery">
 
-<img src="IMG_0996.jpg"
-alt="Blueberry Pancake Keychain 2">
+      <img src="1793445666267.png"
+      alt="Blueberry Pancake Keychain photo 1">
 
-<img src="IMG_0998.jpg"
-alt="Blueberry Pancake Keychain 3">
+      <img src="IMG_0996.jpg"
+      alt="Blueberry Pancake Keychain photo 2">
 
-<img src="file_000000004c388211853b85898057db02.png"
-alt="Blueberry Pancake Keychain 4">
+      <img src="IMG_0998.jpg"
+      alt="Blueberry Pancake Keychain photo 3">
 
-</div>
+      <img src="file_000000004c388211853b85898057db02.png"
+      alt="Blueberry Pancake Keychain photo 4">
 
-<p>
-Handmade clay keychain inspired by fluffy blueberry pancakes.
-A little piece of sweetness to carry everywhere! 🫐
-</p>
+    </div>
 
-<p class="price">₹349</p>
+    <div class="dots" id="dots" aria-label="Gallery image indicators">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
 
-<p class="stock">✨ Only 5 pieces available!</p>
+    <p class="gallery-hint">
+      Swipe to explore · Tap a photo to view it larger ♡
+    </p>
 
-<p>Made with care, especially for you 💗</p>
+    <p class="description">
+      Handmade clay keychain inspired by fluffy blueberry pancakes.
+      A little piece of sweetness to carry everywhere! 🫐
+    </p>
 
-</div>
+    <p class="price">₹349</p>
+
+    <p class="stock">✨ Only 5 pieces available!</p>
+
+    <p class="product-note">
+      Made with care, especially for you 💗
+    </p>
+
+  </div>
+
+</main>
+
+<!-- Full-screen image viewer -->
+
+<div class="viewer" id="viewer">
+
+  <button class="close-viewer" id="closeViewer"
+  aria-label="Close image viewer">×</button>
+
+  <button class="viewer-arrow viewer-prev" id="prevImage"
+  aria-label="Previous image">‹</button>
+
+  <img id="largeImage" src=""
+  alt="Enlarged Blueberry Pancake Keychain photo">
+
+  <button class="viewer-arrow viewer-next" id="nextImage"
+  aria-label="Next image">›</button>
+
+  <div class="viewer-count" id="imageCount"></div>
 
 </div>
 
 <footer>
-<p>Made with love by Shopminique 💗</p>
+  <p class="footer-message">
+    Made with love by Shopminique ♡
+  </p>
+
+  <p class="footer-small">
+    Thank you for supporting handmade creations!
+  </p>
 </footer>
+
+<script>
+const gallery = document.getElementById("gallery");
+const photos = Array.from(gallery.querySelectorAll("img"));
+const dots = Array.from(document.querySelectorAll(".dot"));
+
+const viewer = document.getElementById("viewer");
+const largeImage = document.getElementById("largeImage");
+const imageCount = document.getElementById("imageCount");
+
+let currentIndex = 0;
+
+function updateDots() {
+  const index = Math.round(
+    gallery.scrollLeft / gallery.clientWidth
+  );
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+gallery.addEventListener("scroll", updateDots);
+
+function openViewer(index) {
+  currentIndex = index;
+  showImage();
+  viewer.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function showImage() {
+  largeImage.src = photos[currentIndex].src;
+  largeImage.alt = photos[currentIndex].alt;
+
+  imageCount.textContent =
+    (currentIndex + 1) + " / " + photos.length;
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % photos.length;
+  showImage();
+}
+
+function prevImage() {
+  currentIndex =
+    (currentIndex - 1 + photos.length) % photos.length;
+
+  showImage();
+}
+
+function closeViewer() {
+  viewer.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+photos.forEach((photo, index) => {
+  photo.addEventListener("click", () => openViewer(index));
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    gallery.scrollTo({
+      left: index * gallery.clientWidth,
+      behavior: "smooth"
+    });
+  });
+});
+
+document.getElementById("nextImage")
+  .addEventListener("click", nextImage);
+
+document.getElementById("prevImage")
+  .addEventListener("click", prevImage);
+
+document.getElementById("closeViewer")
+  .addEventListener("click", closeViewer);
+
+viewer.addEventListener("click", (event) => {
+  if (event.target === viewer) {
+    closeViewer();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!viewer.classList.contains("active")) return;
+
+  if (event.key === "Escape") closeViewer();
+  if (event.key === "ArrowRight") nextImage();
+  if (event.key === "ArrowLeft") prevImage();
+});
+
+/* Swipe inside enlarged photo viewer */
+
+let touchStartX = 0;
+
+viewer.addEventListener("touchstart", (event) => {
+  touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+viewer.addEventListener("touchend", (event) => {
+  const touchEndX = event.changedTouches[0].screenX;
+  const difference = touchEndX - touchStartX;
+
+  if (Math.abs(difference) > 50) {
+    if (difference < 0) {
+      nextImage();
+    } else {
+      prevImage();
+    }
+  }
+}, { passive: true });
+</script>
 
 </body>
 </html>
