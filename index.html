@@ -1,9 +1,17 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shopminique 🌸</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -14,47 +22,82 @@ body {
 
 header {
   background: #ffdce8;
-  padding: 30px;
+  padding: 30px 15px;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 36px;
+  margin: 10px;
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .container {
-  padding: 20px;
+  padding: 25px 15px;
 }
 
 .product {
   background: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 300px;
-  box-shadow: 0 5px 15px #ddd;
+  border-radius: 22px;
+  padding: 22px;
+  margin: 15px auto;
+  max-width: 430px;
+  box-shadow: 0 5px 15px #ead9df;
 }
 
 .product h2 {
   color: #d36b8c;
 }
 
-button {
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  background: #fff8fa;
+  border-radius: 13px;
+}
+
+.price {
+  font-size: 25px;
+  color: #d36b8c;
+  font-weight: bold;
+}
+
+.stock {
+  color: #648b70;
+  font-weight: bold;
+}
+
+.order {
+  display: inline-block;
   background: #e99ab7;
   color: white;
-  border: none;
-  padding: 12px 25px;
+  text-decoration: none;
+  padding: 13px 28px;
   border-radius: 30px;
+  margin-top: 10px;
 }
 
 footer {
   background: #ffdce8;
   padding: 20px;
+  margin-top: 30px;
 }
 
+@media(max-width: 350px) {
+  .gallery img {
+    height: 140px;
+  }
+}
 </style>
 </head>
 
@@ -62,30 +105,44 @@ footer {
 
 <header>
 <h1>🌸 Shopminique 🌸</h1>
-<p class="tagline">Handmade clay creations made with love ✨</p>
+<p class="tagline">
+Handmade clay creations made with love ✨
+</p>
 </header>
 
 <div class="container">
 
 <div class="product">
-<h2>🐢 Turtle Melon Keychain</h2>
-<p>Handmade clay keychain inspired by a cute little turtle and juicy watermelon.</p>
-<p><strong>₹349</strong></p>
-<button>Order Now</button>
-</div>
 
-<div class="product">
 <h2>🫐 Blueberry Pancake Keychain</h2>
-<p>Handmade clay keychain inspired by fluffy blueberry pancakes.</p>
-<p><strong>₹299</strong></p>
-<button>Order Now</button>
+
+<div class="gallery">
+
+<img src="1793445666267.png"
+alt="Blueberry Pancake Keychain 1">
+
+<img src="IMG_0996.jpg"
+alt="Blueberry Pancake Keychain 2">
+
+<img src="IMG_0998.jpg"
+alt="Blueberry Pancake Keychain 3">
+
+<img src="file_000000004c388211853b85898057db02.png"
+alt="Blueberry Pancake Keychain 4">
+
 </div>
 
-<div class="product">
-<h2>🌸 Sakura Blossom Worry Stone Keychain</h2>
-<p>Handmade clay worry stone keychain inspired by delicate sakura blossoms.</p>
-<p><strong>₹349</strong></p>
-<button>Order Now</button>
+<p>
+Handmade clay keychain inspired by fluffy blueberry pancakes.
+A little piece of sweetness to carry everywhere! 🫐
+</p>
+
+<p class="price">₹349</p>
+
+<p class="stock">✨ Only 5 pieces available!</p>
+
+<p>Made with care, especially for you 💗</p>
+
 </div>
 
 </div>
