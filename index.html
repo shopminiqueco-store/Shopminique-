@@ -4,670 +4,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="theme-color" content="#F8EAF2">
 <title>Shopminique | Handmade Clay Creations</title>
-
-<meta name="description" content="Shopminique creates handmade clay keychains and cute little creations. Contact us on Instagram or email.">
+<meta name="description" content="Shopminique creates handmade clay keychains and cute little creations.">
 
 <style>
-:root {
-  --cream: #F8F3EA;
-  --pink: #E8B9C5;
-  --brown: #59464B;
-  --soft-white: #FFFCF8;
-  --sage: #A9BDA7;
+:root{
+  --pink:#D96F98;
+  --blush:#F8E5EE;
+  --lavender:#EDE4F6;
+  --ivory:#FFFAFC;
+  --rose:#A95D7D;
+  --ink:#51434B;
+  --line:#EAD7E2;
+  --shadow:0 12px 34px rgba(113,70,91,.09);
 }
-
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;text-align:center;
 }
-
-html {
-  scroll-behavior: smooth;
+a{color:inherit}
+header{
+  padding:48px 18px 42px;
+  background:linear-gradient(125deg,#F8E5EE 0%,#F4EAF7 58%,#EDE4F6 100%);
 }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--cream);
-  color: var(--brown);
-  text-align: center;
+.brand-mark{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--rose)}
+h1{
+  margin:12px 0 9px;font:normal 43px Georgia,serif;
+  letter-spacing:.2px;color:#80516A;
 }
-
-/* HEADER */
-
-header {
-  background: var(--pink);
-  padding: 35px 15px;
+.tagline{font:italic 16px Georgia,serif;color:#775C6B;margin:0}
+.header-note{
+  display:inline-block;margin-top:20px;padding:9px 17px;border:1px solid #E9C9D9;
+  border-radius:30px;background:rgba(255,250,252,.72);font-size:12px;letter-spacing:.3px;
 }
-
-h1 {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  margin: 8px;
+nav{
+  position:sticky;top:0;z-index:100;display:flex;justify-content:center;gap:28px;
+  padding:17px 10px;background:rgba(255,250,252,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
 }
-
-.tagline {
-  font-size: 15px;
+nav a{text-decoration:none;font-size:12px;font-weight:bold;letter-spacing:1px;color:#79566A}
+nav a:hover{color:var(--pink)}
+.container{padding:42px 16px 30px}
+.section-kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose)}
+.section-heading{font:normal 31px Georgia,serif;color:#80516A;margin:9px 0 27px}
+.product{
+  max-width:490px;margin:0 auto;padding:25px 23px 28px;background:#fff;
+  border:1px solid var(--line);border-radius:25px;box-shadow:var(--shadow);
 }
-
-.header-note {
-  display: inline-block;
-  background: var(--cream);
-  padding: 8px 17px;
-  border-radius: 30px;
-  font-size: 12px;
-  margin-top: 10px;
+.product h2{font:normal 25px Georgia,serif;line-height:1.4;color:#80516A;margin:0 0 17px}
+.gallery{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:18px 0 10px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
 }
-
-/* NAVIGATION */
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 17px 10px;
-  background: var(--soft-white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(89,70,75,0.06);
+.gallery::-webkit-scrollbar{display:none}
+.gallery img{
+  flex:0 0 100%;width:100%;height:310px;object-fit:contain;background:#FCF6F9;
+  border-radius:17px;scroll-snap-align:center;cursor:zoom-in;
 }
-
-nav a {
-  text-decoration: none;
-  color: var(--brown);
-  font-weight: bold;
-  font-size: 13px;
+.dots{display:flex;justify-content:center;gap:9px;margin:14px 0}
+.dot{width:8px;height:8px;border-radius:50%;background:#D9B4C7;opacity:.55;cursor:pointer}
+.dot.active{background:var(--rose);opacity:1}
+.gallery-hint{font-size:11px;color:#927B88}
+.description{font-size:14px;line-height:1.8;color:#71616A;max-width:370px;margin:18px auto}
+.price{font:normal 30px Georgia,serif;color:#9C5577;margin:16px 0 8px}
+.stock{
+  display:inline-block;padding:9px 15px;border-radius:25px;background:#F7EAF1;
+  color:#92516F;font-size:12px;font-weight:bold;
 }
-
-/* COLLECTION */
-
-.container {
-  padding: 30px 15px;
+.product-note{font:italic 14px Georgia,serif;color:#98788A;margin:18px 0 0}
+.primary-button,.soft-button{
+  display:inline-block;border:0;border-radius:30px;padding:14px 24px;text-decoration:none;
+  font-size:13px;font-weight:bold;letter-spacing:.3px;cursor:pointer;
 }
-
-.section-heading {
-  font-family: Georgia, serif;
-  font-size: 27px;
-  margin-bottom: 22px;
+.primary-button{background:var(--pink);color:white;box-shadow:0 5px 14px rgba(217,111,152,.2)}
+.soft-button{background:var(--lavender);color:#765C80}
+.order-cta{margin-top:20px}
+section.content-section{padding:45px 17px;scroll-margin-top:70px}
+.section-card{
+  max-width:490px;margin:0 auto;padding:28px 23px;background:#fff;
+  border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
 }
-
-.product {
-  background: var(--soft-white);
-  border-radius: 22px;
-  padding: 22px;
-  margin: 15px auto;
-  max-width: 450px;
-  box-shadow: 0 5px 18px rgba(89,70,75,0.09);
+.section-title{font:normal 29px Georgia,serif;color:#80516A;margin:0 0 12px}
+.section-copy{font-size:14px;line-height:1.8;color:#766570;max-width:390px;margin:0 auto 22px}
+#payment{background:linear-gradient(145deg,#FCF3F7,#F3ECF8)}
+.order-ref{
+  padding:14px 13px;background:#FBF4F8;border:1px dashed #D8A9C0;border-radius:14px;
+  margin:18px 0 20px;
 }
-
-.product h2 {
-  font-family: Georgia, serif;
-  font-size: 24px;
-  line-height: 1.4;
+.order-ref small{display:block;color:#8B7180;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+#orderReference{display:block;font:bold 17px Arial,sans-serif;letter-spacing:1px;color:#8E4F6D;margin:8px 0}
+.copy-button{
+  border:1px solid #D9B5C8;background:white;color:#8D5571;border-radius:20px;
+  padding:8px 14px;font-size:12px;font-weight:bold;cursor:pointer;
 }
-
-/* GALLERY */
-
-.gallery {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  margin: 20px 0 12px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+.qr-frame{max-width:330px;margin:20px auto 15px;padding:10px;background:white;border:1px solid var(--line);border-radius:18px}
+.qr-frame img{display:block;width:100%;height:auto;border-radius:10px}
+.upi-id{font-weight:bold;overflow-wrap:anywhere;color:#80516A;margin:12px 0 5px}
+.steps{text-align:left;max-width:370px;margin:22px auto;padding-left:22px}
+.steps li{padding:0 0 12px 5px;font-size:13px;line-height:1.65;color:#6F6069}
+.notice{
+  background:#FFF8FC;border-left:3px solid var(--pink);border-radius:8px;
+  padding:12px 14px;text-align:left;font-size:12px;line-height:1.7;color:#766570;margin:18px 0;
 }
-
-.gallery::-webkit-scrollbar {
-  display: none;
+.payment-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+#contact{background:#FFFAFC}
+.contact-box{
+  max-width:390px;margin:15px auto;padding:21px;border-radius:18px;
+  background:#FBF4F8;border:1px solid var(--line);
 }
-
-.gallery img {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-  background: var(--cream);
-  border-radius: 15px;
-  scroll-snap-align: center;
-  cursor: zoom-in;
+.contact-icon{font-size:25px}
+.contact-title{font:normal 19px Georgia,serif;color:#80516A;margin:8px 0 12px}
+.contact-detail{font-size:14px;font-weight:bold;text-decoration:none;overflow-wrap:anywhere}
+.contact-button{display:block;max-width:280px;margin:15px auto 0}
+.viewer{
+  display:none;position:fixed;z-index:1000;inset:0;background:rgba(35,27,30,.97);
+  align-items:center;justify-content:center;padding:55px 15px
 }
-
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin: 14px 0;
+.viewer.active{display:flex}
+.viewer img{max-width:100%;max-height:85vh;object-fit:contain}
+.close-viewer,.viewer-arrow{
+  position:absolute;border:0;background:rgba(255,255,255,.18);color:white;
+  cursor:pointer;border-radius:50%;width:44px;height:44px;font-size:27px
 }
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--pink);
-  opacity: 0.45;
-  cursor: pointer;
+.close-viewer{top:15px;right:15px}
+.viewer-arrow{top:50%;transform:translateY(-50%)}
+.viewer-prev{left:10px}.viewer-next{right:10px}
+.viewer-count{position:absolute;bottom:18px;color:white;font-size:14px}
+footer{
+  padding:30px 15px;background:linear-gradient(125deg,#F8E5EE,#EDE4F6);
+  color:#79596B
 }
-
-.dot.active {
-  background: var(--brown);
-  opacity: 1;
-}
-
-.gallery-hint {
-  font-size: 12px;
-  color: #927B7F;
-}
-
-.description {
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.price {
-  font-size: 27px;
-  font-weight: bold;
-  margin: 18px 0 10px;
-}
-
-.stock {
-  display: inline-block;
-  background: #E5EDE2;
-  color: #526B50;
-  padding: 9px 16px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.product-note {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 14px;
-  margin-top: 18px;
-}
-
-/* CONTACT US */
-
-#contact {
-  display: block;
-  width: 100%;
-  padding: 45px 18px;
-  margin-top: 25px;
-  background: var(--soft-white);
-  scroll-margin-top: 65px;
-}
-
-.contact-heading {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  margin: 0 0 12px;
-}
-
-.contact-description {
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 400px;
-  margin: 0 auto 25px;
-}
-
-.contact-box {
-  max-width: 390px;
-  margin: 15px auto;
-  padding: 20px;
-  border-radius: 18px;
-  background: var(--cream);
-  border: 1px solid #EAD6DA;
-}
-
-.contact-icon {
-  font-size: 27px;
-  margin-bottom: 8px;
-}
-
-.contact-title {
-  font-family: Georgia, serif;
-  font-size: 19px;
-  margin: 5px 0 12px;
-}
-
-.contact-detail {
-  color: var(--brown);
-  font-size: 15px;
-  font-weight: bold;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-
-.contact-button {
-  display: block;
-  max-width: 280px;
-  margin: 15px auto 0;
-  padding: 14px 18px;
-  border-radius: 30px;
-  background: var(--pink);
-  color: var(--brown);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.email-button {
-  background: #E5EDE2;
-}
-
-/* VIEWER */
-
-.viewer {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  inset: 0;
-  background: rgba(35,27,30,0.97);
-  align-items: center;
-  justify-content: center;
-  padding: 55px 15px;
-}
-
-.viewer.active {
-  display: flex;
-}
-
-.viewer img {
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-.close-viewer,
-.viewer-arrow {
-  position: absolute;
-  border: none;
-  background: rgba(255,255,255,0.18);
-  color: white;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 27px;
-}
-
-.close-viewer {
-  top: 15px;
-  right: 15px;
-}
-
-.viewer-arrow {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.viewer-prev {
-  left: 10px;
-}
-
-.viewer-next {
-  right: 10px;
-}
-
-.viewer-count {
-  position: absolute;
-  bottom: 18px;
-  color: white;
-  font-size: 14px;
-}
-
-/* FOOTER */
-
-footer {
-  background: var(--pink);
-  padding: 28px 15px;
-}
-
-.footer-message {
-  font-family: Georgia, serif;
-  font-size: 18px;
-}
-
-.footer-small {
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.footer-small a {
-  color: var(--brown);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* MOBILE */
-
-@media(max-width: 380px) {
-  h1 {
-    font-size: 31px;
-  }
-
-  nav {
-    gap: 17px;
-  }
-
-  nav a {
-    font-size: 12px;
-  }
-
-  .gallery img {
-    height: 240px;
-  }
-
-  .product {
-    padding: 17px;
-  }
+.footer-message{font:normal 20px Georgia,serif;margin:0 0 8px}
+.footer-small{font-size:12px;line-height:1.9}
+.footer-small a{font-weight:bold;text-decoration:none}
+@media(max-width:390px){
+  h1{font-size:35px}nav{gap:17px}nav a{font-size:11px}
+  .gallery img{height:245px}.product{padding:19px 15px}
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-
 <header id="home">
-  <h1>🌸 Shopminique 🌸</h1>
-
-  <p class="tagline">
-    Handmade clay creations made with love ✨
-  </p>
-
-  <div class="header-note">
-    Little creations, made to make you happy ♡
-  </div>
+  <div class="brand-mark">Handmade clay charms</div>
+  <h1>Shopminique</h1>
+  <p class="tagline">Handmade with love, made to be cherished ♡</p>
+  <div class="header-note">Small charms · Big happiness</div>
 </header>
 
-<!-- NAVIGATION -->
-
-<nav>
+<nav aria-label="Main navigation">
   <a href="#home">HOME</a>
   <a href="#collection">COLLECTION</a>
-  <a href="#contact">CONTACT US</a>
+  <a href="#payment">HOW TO ORDER</a>
+  <a href="#contact">CONTACT</a>
 </nav>
 
-<!-- COLLECTION -->
-
 <main class="container" id="collection">
-
+  <div class="section-kicker">A little something handmade</div>
   <h2 class="section-heading">Our Little Collection</h2>
 
-  <div class="product">
-
+  <article class="product">
     <h2>🫐 Blueberry Pancake Keychain</h2>
-
     <div class="gallery" id="gallery">
-
-      <img src="1793445666267.png"
-      alt="Blueberry Pancake Keychain photo 1">
-
-      <img src="IMG_0996.JPG"
-      alt="Blueberry Pancake Keychain photo 2">
-
-      <img src="IMG_0998.JPG"
-      alt="Blueberry Pancake Keychain photo 3">
-
-      <img src="file_000000004c388211853b85898057db02.png"
-      alt="Blueberry Pancake Keychain photo 4">
-
+      <img src="1793445666267.png" alt="Blueberry Pancake Keychain photo 1">
+      <img src="IMG_0996.JPG" alt="Blueberry Pancake Keychain photo 2">
+      <img src="IMG_0998.JPG" alt="Blueberry Pancake Keychain photo 3">
+      <img src="file_000000004c388211853b85898057db02.png" alt="Blueberry Pancake Keychain photo 4">
     </div>
-
-    <div class="dots" id="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <div class="dots" id="dots" aria-label="Choose product photo">
+      <button class="dot active" aria-label="Photo 1"></button>
+      <button class="dot" aria-label="Photo 2"></button>
+      <button class="dot" aria-label="Photo 3"></button>
+      <button class="dot" aria-label="Photo 4"></button>
     </div>
-
-    <p class="gallery-hint">
-      Swipe to explore · Tap a photo to view it larger ♡
-    </p>
-
+    <p class="gallery-hint">Swipe to explore · Tap a photo to view it larger ♡</p>
     <p class="description">
-      Handmade clay keychain inspired by fluffy blueberry pancakes.
+      A handmade clay keychain inspired by fluffy blueberry pancakes.
       A little piece of sweetness to carry everywhere! 🫐
     </p>
-
     <p class="price">₹349</p>
-
-    <p class="stock">
-      ✨ Only 5 pieces available!
-    </p>
-
-    <p class="product-note">
-      Made with care, especially for you 💗
-    </p>
-
-  </div>
-
+    <p class="stock">♡ Only 5 pieces available</p>
+    <p class="product-note">Made with care, especially for you.</p>
+    <div class="order-cta"><a class="primary-button" href="#payment">ORDER THIS PIECE ♡</a></div>
+  </article>
 </main>
 
-<!-- CONTACT US SECTION -->
+<section class="content-section" id="payment">
+  <div class="section-card">
+    <div class="section-kicker">A simple, secure checkout</div>
+    <h2 class="section-title">Complete Your Order ♡</h2>
+    <p class="section-copy">Your order reference helps us match your payment with your order.</p>
 
-<section id="contact">
+    <div class="order-ref">
+      <small>Your order reference</small>
+      <strong id="orderReference">SHOP-LOADING</strong>
+      <button class="copy-button" id="copyReference" type="button">COPY REFERENCE</button>
+    </div>
 
-  <h2 class="contact-heading">
-    Let's Stay Connected ♡
-  </h2>
+    <h3 class="contact-title">Scan & Pay using any UPI app</h3>
+    <div class="qr-frame">
+      <img src="data:image/png;base64,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" alt="Shopminique Paytm UPI QR code">
+    </div>
+    <p class="upi-id">priya-poddar@ptaxis</p>
+    <p class="gallery-hint">UPI ID shown above · Paytm / Google Pay / PhonePe / BHIM</p>
 
-  <p class="contact-description">
-    Have a question, want to place an order,
-    or simply want to say hello?
-    We'd love to hear from you!
-  </p>
+    <ol class="steps">
+      <li>First, message us on Instagram with your order reference to confirm the final payable amount and delivery details.</li>
+      <li>Scan the QR code or enter the UPI ID in your preferred UPI app.</li>
+      <li>Enter the exact amount confirmed by Shopminique. Add your order reference in the payment note if your UPI app allows it.</li>
+      <li>After paying, take a screenshot of the successful transaction.</li>
+      <li>Send the screenshot and your order reference to <strong>@shopminique.co</strong> on Instagram.</li>
+    </ol>
 
-  <!-- INSTAGRAM -->
+    <div class="notice">
+      <strong>Please note:</strong> Your product price is ₹349. Confirm the final payable amount with us before making payment. Your order is confirmed only after we manually verify the payment. A payment screenshot alone is not confirmation.
+    </div>
 
-  <div class="contact-box">
-
-    <div class="contact-icon">📸</div>
-
-    <h3 class="contact-title">Find us on Instagram</h3>
-
-    <a class="contact-detail"
-       href="https://www.instagram.com/shopminique.co/"
-       target="_blank"
-       rel="noopener noreferrer">
-       @shopminique.co
-    </a>
-
-    <a class="contact-button"
-       href="https://www.instagram.com/shopminique.co/"
-       target="_blank"
-       rel="noopener noreferrer">
-       VISIT OUR INSTAGRAM ♡
-    </a>
-
+    <div class="payment-actions">
+      <button class="primary-button" id="copyPaymentMessage" type="button">COPY ORDER MESSAGE</button>
+      <a class="soft-button" href="https://www.instagram.com/shopminique.co/" target="_blank" rel="noopener noreferrer">SEND ON INSTAGRAM ↗</a>
+    </div>
   </div>
-
-  <!-- EMAIL -->
-
-  <div class="contact-box">
-
-    <div class="contact-icon">💌</div>
-
-    <h3 class="contact-title">Write us an Email</h3>
-
-    <a class="contact-detail"
-       href="mailto:Shopminique.co@gmail.com">
-       Shopminique.co@gmail.com
-    </a>
-
-    <a class="contact-button email-button"
-       href="mailto:Shopminique.co@gmail.com">
-       SEND US AN EMAIL ♡
-    </a>
-
-  </div>
-
-  <p class="contact-description" style="margin-top:25px;">
-    Thank you for supporting our little handmade business! 🌷
-  </p>
-
 </section>
 
-<!-- IMAGE VIEWER -->
+<section class="content-section" id="contact">
+  <h2 class="section-title">Let's Stay Connected ♡</h2>
+  <p class="section-copy">Have a question or want to place an order? We'd love to hear from you.</p>
 
-<div class="viewer" id="viewer">
+  <div class="contact-box">
+    <div class="contact-icon">♡</div>
+    <h3 class="contact-title">Find us on Instagram</h3>
+    <a class="contact-detail" href="https://www.instagram.com/shopminique.co/" target="_blank" rel="noopener noreferrer">@shopminique.co</a>
+    <a class="primary-button contact-button" href="https://www.instagram.com/shopminique.co/" target="_blank" rel="noopener noreferrer">VISIT OUR INSTAGRAM</a>
+  </div>
 
-  <button class="close-viewer" id="closeViewer"
-  aria-label="Close image viewer">×</button>
+  <div class="contact-box">
+    <div class="contact-icon">✉</div>
+    <h3 class="contact-title">Write us an Email</h3>
+    <a class="contact-detail" href="mailto:Shopminique.co@gmail.com">Shopminique.co@gmail.com</a>
+    <a class="soft-button contact-button" href="mailto:Shopminique.co@gmail.com">SEND US AN EMAIL</a>
+  </div>
+</section>
 
-  <button class="viewer-arrow viewer-prev" id="prevImage"
-  aria-label="Previous image">‹</button>
-
-  <img id="largeImage" src=""
-  alt="Enlarged product photograph">
-
-  <button class="viewer-arrow viewer-next" id="nextImage"
-  aria-label="Next image">›</button>
-
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Product photo viewer">
+  <button class="close-viewer" id="closeViewer" aria-label="Close image viewer">×</button>
+  <button class="viewer-arrow viewer-prev" id="prevImage" aria-label="Previous image">‹</button>
+  <img id="largeImage" src="" alt="Enlarged product photograph">
+  <button class="viewer-arrow viewer-next" id="nextImage" aria-label="Next image">›</button>
   <div class="viewer-count" id="imageCount"></div>
-
 </div>
 
-<!-- FOOTER -->
-
 <footer>
-
-  <p class="footer-message">
-    Made with love by Shopminique ♡
-  </p>
-
-  <p class="footer-small">
-    Thank you for supporting handmade creations!
-  </p>
-
-  <p class="footer-small">
-    Instagram:
-    <a href="https://www.instagram.com/shopminique.co/"
-       target="_blank"
-       rel="noopener noreferrer">
-       @shopminique.co
-    </a>
-  </p>
-
-  <p class="footer-small">
-    Email:
-    <a href="mailto:Shopminique.co@gmail.com">
-       Shopminique.co@gmail.com
-    </a>
-  </p>
-
+  <p class="footer-message">Made with love by Shopminique ♡</p>
+  <p class="footer-small">Thank you for supporting small, handmade creations.</p>
+  <p class="footer-small"><a href="https://www.instagram.com/shopminique.co/" target="_blank" rel="noopener noreferrer">@shopminique.co</a></p>
+  <p class="footer-small"><a href="mailto:Shopminique.co@gmail.com">Shopminique.co@gmail.com</a></p>
 </footer>
 
 <script>
-
 const gallery = document.getElementById("gallery");
 const photos = Array.from(gallery.querySelectorAll("img"));
 const dots = Array.from(document.querySelectorAll(".dot"));
-
 const viewer = document.getElementById("viewer");
 const largeImage = document.getElementById("largeImage");
 const imageCount = document.getElementById("imageCount");
-
 let currentIndex = 0;
 
-function updateDots() {
-  const index = Math.round(
-    gallery.scrollLeft / gallery.clientWidth
-  );
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
+function updateDots(){
+  const index = Math.round(gallery.scrollLeft / gallery.clientWidth);
+  dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
 }
+gallery.addEventListener("scroll",updateDots);
 
-gallery.addEventListener("scroll", updateDots);
-
-function openViewer(index) {
-  currentIndex = index;
-  showImage();
-  viewer.classList.add("active");
-  document.body.style.overflow = "hidden";
+function openViewer(index){
+  currentIndex=index;showImage();viewer.classList.add("active");
+  document.body.style.overflow="hidden";
 }
-
-function showImage() {
-  largeImage.src = photos[currentIndex].src;
-  largeImage.alt = photos[currentIndex].alt;
-
-  imageCount.textContent =
-    (currentIndex + 1) + " / " + photos.length;
+function showImage(){
+  largeImage.src=photos[currentIndex].src;
+  largeImage.alt=photos[currentIndex].alt;
+  imageCount.textContent=(currentIndex+1)+" / "+photos.length;
 }
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % photos.length;
-  showImage();
+function nextImage(){currentIndex=(currentIndex+1)%photos.length;showImage()}
+function prevImage(){currentIndex=(currentIndex-1+photos.length)%photos.length;showImage()}
+function closeViewer(){
+  viewer.classList.remove("active");document.body.style.overflow="";
 }
-
-function prevImage() {
-  currentIndex =
-    (currentIndex - 1 + photos.length) % photos.length;
-  showImage();
-}
-
-function closeViewer() {
-  viewer.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-photos.forEach((photo, index) => {
-  photo.addEventListener("click", () => openViewer(index));
+photos.forEach((photo,index)=>photo.addEventListener("click",()=>openViewer(index)));
+dots.forEach((dot,index)=>dot.addEventListener("click",()=>{
+  gallery.scrollTo({left:index*gallery.clientWidth,behavior:"smooth"});
+}));
+document.getElementById("nextImage").addEventListener("click",nextImage);
+document.getElementById("prevImage").addEventListener("click",prevImage);
+document.getElementById("closeViewer").addEventListener("click",closeViewer);
+viewer.addEventListener("click",event=>{if(event.target===viewer)closeViewer()});
+document.addEventListener("keydown",event=>{
+  if(!viewer.classList.contains("active"))return;
+  if(event.key==="Escape")closeViewer();
+  if(event.key==="ArrowRight")nextImage();
+  if(event.key==="ArrowLeft")prevImage();
 });
+let touchStartX=0;
+viewer.addEventListener("touchstart",event=>{touchStartX=event.changedTouches[0].screenX},{passive:true});
+viewer.addEventListener("touchend",event=>{
+  const diff=event.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(diff)>50){if(diff<0)nextImage();else prevImage()}
+},{passive:true});
 
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    gallery.scrollTo({
-      left: index * gallery.clientWidth,
-      behavior: "smooth"
-    });
-  });
-});
-
-document.getElementById("nextImage")
-.addEventListener("click", nextImage);
-
-document.getElementById("prevImage")
-.addEventListener("click", prevImage);
-
-document.getElementById("closeViewer")
-.addEventListener("click", closeViewer);
-
-viewer.addEventListener("click", (event) => {
-  if (event.target === viewer) closeViewer();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (!viewer.classList.contains("active")) return;
-
-  if (event.key === "Escape") closeViewer();
-  if (event.key === "ArrowRight") nextImage();
-  if (event.key === "ArrowLeft") prevImage();
-});
-
-let touchStartX = 0;
-
-viewer.addEventListener("touchstart", (event) => {
-  touchStartX = event.changedTouches[0].screenX;
-}, { passive: true });
-
-viewer.addEventListener("touchend", (event) => {
-  const touchEndX = event.changedTouches[0].screenX;
-  const difference = touchEndX - touchStartX;
-
-  if (Math.abs(difference) > 50) {
-    if (difference < 0) nextImage();
-    else prevImage();
+/* A reference is generated in the browser; it is not a server-side reservation. */
+function makeOrderReference(){
+  const now=new Date();
+  const date=now.getFullYear().toString().slice(-2)+
+    String(now.getMonth()+1).padStart(2,"0")+
+    String(now.getDate()).padStart(2,"0");
+  const key="shopminiqueOrderRef";
+  let ref=sessionStorage.getItem(key);
+  if(!ref){
+    const suffix=Math.random().toString(36).slice(2,7).toUpperCase();
+    ref="SHOP-"+date+"-"+suffix;
+    sessionStorage.setItem(key,ref);
   }
-}, { passive: true });
+  return ref;
+}
+const orderReference=makeOrderReference();
+document.getElementById("orderReference").textContent=orderReference;
 
+async function copyText(value,button,successLabel){
+  try{
+    await navigator.clipboard.writeText(value);
+    const old=button.textContent;button.textContent=successLabel;
+    setTimeout(()=>button.textContent=old,1800);
+  }catch(error){
+    window.prompt("Copy this text:",value);
+  }
+}
+document.getElementById("copyReference").addEventListener("click",event=>{
+  copyText(orderReference,event.currentTarget,"COPIED ✓");
+});
+document.getElementById("copyPaymentMessage").addEventListener("click",event=>{
+  const message="Hello Shopminique! I'd like to place an order for the Blueberry Pancake Keychain. My order reference is "+orderReference+". Please confirm the final payable amount and delivery details.";
+  copyText(message,event.currentTarget,"MESSAGE COPIED ✓");
+});
 </script>
-
 </body>
 </html>
